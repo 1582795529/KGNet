@@ -1,0 +1,9 @@
+hfvreid
+python tools/train.py --config_file ./configs/kgnet.yml MODEL.DEVICE_ID "('0')" DATASETS.NAMES "('VeRi')" OUTPUT_DIR "./outputs/checkpoints"
+
+python tools/test.py --config_file ./configs/kgnet.yml MODEL.DEVICE_ID "('0')" DATASETS.NAMES "('VeRi')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.WEIGHT "./pth/kgnet.pth"
+
+
+
+python tools/test.py --config_file ./configs/softmax_triplet_with_center.yml MODEL.DEVICE_ID "('0')" DATASETS.NAMES "('VeRi')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.WEIGHT "./pth/kgnet.pth"
+
